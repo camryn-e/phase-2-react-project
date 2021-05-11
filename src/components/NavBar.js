@@ -20,12 +20,6 @@ const NavBar = () => {
       to="/song-form"
     >Add a Song</NavLink>
     </li>
-    {/* <li>
-    <NavLink
-        to="/actors"
-        exact
-      >Actors</NavLink>
-    </li> */}
     </div>
   );
 };

@@ -3,13 +3,11 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import SongList from './SongList';
-// import Home from './components/Home';
 import FavSong from './FavSong';
 import SongForm from './SongForm';
 import SongPage from './SongPage';
 import NavBar from './NavBar'
-import '../App.css'
+
 
 export default class App extends Component {
 

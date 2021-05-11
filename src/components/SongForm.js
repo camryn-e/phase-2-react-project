@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import FavSong from './FavSong'
-import SongList from './SongList'
+
+
 
 export default class SongForm extends Component {
     state = {
@@ -37,13 +37,6 @@ export default class SongForm extends Component {
         },
         body: JSON.stringify(this.state)
     })
-            .then(resp => resp.json())
-            .then((obj) => {
-                let objID = obj.id;
-                console.log("obj:", obj)
-                console.log("objID:", objID)
-                document.body.innerHTML = obj.id;
-            })
             .catch(function(error) {
                 document.body.innerHTML = error.message;
               });
