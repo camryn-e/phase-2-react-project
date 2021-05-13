@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 
 
 export default class SongForm extends Component {
+    
     state = {
         songName: '',
         artist: '',
@@ -36,10 +37,15 @@ export default class SongForm extends Component {
           "Accept": "application/json"
         },
         body: JSON.stringify(this.state)
-    })
+        })
+        .then(res => res.json())
+        .then(resp => {
+          this.props.addNewSong(resp)
+        })
             .catch(function(error) {
                 document.body.innerHTML = error.message;
               });
+        
     }
 
     render() {

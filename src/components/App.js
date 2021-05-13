@@ -20,6 +20,10 @@ export default class App extends Component {
       .then(response => response.json())
       .then(songData => this.setState({ songList: songData }))
   }
+
+  addNewSong = (newSong) => {
+    this.setState({ songList: [...this.state.songList, newSong]},() => console.log(this.state.songList))
+  }
   
   render() {
     return (
@@ -28,8 +32,8 @@ export default class App extends Component {
           <NavBar />
           <Route exact path="/" render={() => <h1>Home</h1>}/>
           <Route exact path="/song-list" render={routerProps => <SongList {...routerProps} songList={this.state.songList}/>}/>
-          <Route exact path="/song-form" component={SongForm}/>
-          <Route path={`/song-list/:songId`} render={routerProps => <FavSong {...routerProps} songList={this.state.songList}/> }/>
+          <Route exact path="/song-form" render={routerProps => <SongForm {...routerProps} addNewSong={this.addNewSong}/>}/>
+          <Route path={`/song-list/:songId`} render={routerProps => <FavSong {...routerProps} songList={this.state.songList}/>}/>
         </div>
       </Router>
     );
