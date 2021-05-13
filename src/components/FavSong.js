@@ -6,8 +6,8 @@ const FavSong = ({match, songList}) => {
     <div>
         <h1>Favorite Song</h1>
       <h3>{ song.songName }</h3>
-      <p> artist: { song.artist } </p>
-      <p> album: { song.album } </p>
+      <p> Artist: { song.artist } </p>
+      <p> Album: { song.album } </p>
 
     </div>
   );

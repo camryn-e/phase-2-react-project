@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import FavSong from './FavSong';
 import SongForm from './SongForm';
-import SongPage from './SongPage';
+import SongList from './SongList'
 import NavBar from './NavBar'
 
 
@@ -26,8 +26,8 @@ export default class App extends Component {
       <Router>
         <div>
           <NavBar />
-          <Route exact path="/" render={() => <div>Home</div>}/>
-          <Route exact path="/song-list" render={routerProps => <SongPage {...routerProps} songList={this.state.songList}/>}/>
+          <Route exact path="/" render={() => <h1>Home</h1>}/>
+          <Route exact path="/song-list" render={routerProps => <SongList {...routerProps} songList={this.state.songList}/>}/>
           <Route exact path="/song-form" component={SongForm}/>
           <Route path={`/song-list/:songId`} render={routerProps => <FavSong {...routerProps} songList={this.state.songList}/> }/>
         </div>
